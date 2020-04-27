@@ -4,10 +4,19 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "reset-css": "^5.0.1",
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.1.2",
+    "eslint": "^6.8.0",
+    "vue-template-compiler": "^2.6.11"
+  },
   "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --out-file index.html -d ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
