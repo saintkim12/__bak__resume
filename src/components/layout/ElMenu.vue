@@ -13,20 +13,16 @@
 @import "./_var.scss";
 .menu {
   position: fixed;
-  top: 0;
-  background-color: #666;
   width: $menubar-width;
   left: calc((100% - #{$menubar-width}) / 2);
-  // opacity: 0.6;
-  display: none;
-  // transform: translateY(-100%);
-  // transition: all 0.5s ease-in-out;
-  flex-wrap: nowrap;
   padding: 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #666;
+  transform: translateY(-100%);
+  transition: all .2s ease-in-out;
   &.opened {
-    display: flex;
-    // transform:translateY(0%);
-    // transition: all 0.5s ease-in-out;
+    transform:translateY(0%);
   }
   .menu-item {
     font-size: 1.5rem;
