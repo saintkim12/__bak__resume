@@ -1,6 +1,6 @@
 <template>
   <div id="page">
-    <el-menu ref="menu"></el-menu>
+    <el-menu ref="menu" :page-length="pageLength"></el-menu>
     <el-page>
       <h1 style="text-align: center;">Hello!</h1>
       <div @click="$refs.menu.open()">
@@ -20,6 +20,14 @@ export default {
     return {
       displayPosts: ['Welcome', 'Page001', 'Page002'],
       posts: {}
+    }
+  },
+  computed: {
+    defaultPageLength() {
+      return 1
+    },
+    pageLength() {
+      return Object.keys(this.posts).length + this.defaultPageLength
     }
   },
   mounted() {
