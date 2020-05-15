@@ -3,7 +3,7 @@
     <el-menu ref="menu" :page-length="pageLength"></el-menu>
     <el-page>
       <h1 style="text-align: center;">Hello!</h1>
-      <div @click="$refs.menu.open()">
+      <div>
         Bob lives in a .
       </div>
     </el-page>
@@ -50,4 +50,7 @@ html, body, #page {
   width: 100%;
   height: 100%;
 }
+// html {
+//   scroll-behavior: smooth;
+// }
 </style>

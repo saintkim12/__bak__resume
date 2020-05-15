@@ -7,6 +7,7 @@
     "parcel-bundler": "^1.12.4",
     "reset-css": "^5.0.1",
     "vue": "^2.6.11",
+    "vue-fragment": "^1.5.1",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
