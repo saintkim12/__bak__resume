@@ -1,1 +1,51 @@
-# Page001
+# saintkim12은 이런 걸 할 줄 압니다.
+- Javascript
+  - Modern Javascript
+    - ES6
+      - Promise를 통한 비동기 방식 사용 가능
+    - 빌드(webpack, parcel...)를 기반으로 하는 CommonJS 방식
+    - Polyfill을 사용한 구 브라우저 지원
+  - AMD(RequireJS)
+    - 구 브라우저(IE)에서 의존성 관리를 위해 사용
+  - Vue.js
+    - Vue CLI를 사용한 프론트엔드 프레임워크 구축
+    - 스크립트 형식으로 Vue.js 적용 가능
+      - 구 사이트에도 Vue.js를 사용한 사이트 확장 가능
+      - requireJS와 조합하여 컴포넌트 형식의 구조화 가능
+  - React.js
+    - create-react-app을 사용한 프론트엔드 프레임워크 구축
+  - jQuery
+    - CSS 선택자를 사용한 DOM Element 제어, 이벤트 처리
+    - $.ajax를 사용한 비동기 컨트롤 가능
+- Node.js
+  - 프론트엔드 개발 환경(빌드형식) 구축(Vue CLI, webpack 등)
+  - Express.js를 사용한 서버 구축
+- Java
+  - Spring boot(Spring)
+    - gradle
+      - multiple module project
+      - node.js와 연동하여 빌드 처리(-> 빌드 자동화(jenkins))
+    - RESTful API 서비스
+    - Spring Security(OAuth2, JWT token)
+    - Annotation 관리
+    - AOP
+  - Java 1.8
+    - Optional, Stream
+  - lombok
+  - Database 연동
+    - Mybatis
+    - JPA
+  - thymeleaf
+    - jsp 대신 html로 화면 관리
+    - 공통 부분 분리
+  - jsp
+- Database
+  - 전반적인 RDBMS(Oracle, MS-SQL, PostgreSQL, MySQL, ...)
+- Git
+  - 기본적인 저장소 생성/관리
+  - master, develop, feature, release 등의 브랜치 관리
+- Docker
+  - docker-compose를 사용한 컨테이너 생성/관리
+  - 웹서비스 및 관련 서비스 실행
+- 그 외
+  - PHP, .NET(ASP) 등
