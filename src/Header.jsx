@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 
 const Nav = () => {
   const [menu] = useState([
@@ -23,10 +23,14 @@ const Nav = () => {
 }
 
 const Header = () => {
+  const [userName] = useState('saintkim12')
+  useEffect(() => {
+    document.title = userName
+  }, [userName])
   return (
     <Fragment>
       <Nav />
-      <h1 className="logo">saintkim12</h1>
+      <h1 className="logo">{ userName }</h1>
       <h2 className="slogan">Web Developer</h2>
     </Fragment>
   )
