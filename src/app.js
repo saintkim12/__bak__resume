@@ -1,9 +1,5 @@
 import { createElement } from 'react'
 import { render } from 'react-dom'
-import Section from './Section'
-import Header from './Header'
-import Footer from './Footer'
+import App from './App.jsx'
 
-render(createElement(Header), document.getElementById('header'))
-render(createElement(Section), document.getElementById('main'))
-render(createElement(Footer), document.getElementById('footer'))
+render(createElement(App), document.getElementById('wrapper'))

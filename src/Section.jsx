@@ -1,15 +1,18 @@
 import React from 'react'
-import Context from './Context'
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import SectionAchievements from './SectionAchievements'
-// eslint-disable-next-line no-unused-vars
 import SectionSkills from './SectionSkills'
+import SectionPortfolio from './SectionPortfolio'
+import SectionContact from './SectionContact'
+/* eslint-enable no-unused-vars */
 const Section = () => {
   return (
-    <Context.Provider value={ {} }>
+    <section id="main">
       {/* <SectionAchievements /> */}
-      <SectionSkills />
-    </Context.Provider>
+      {/* <SectionSkills /> */}
+      {/* <SectionPortfolio /> */}
+      <SectionContact />
+    </section>
   )
 }
 

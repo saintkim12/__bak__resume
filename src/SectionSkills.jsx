@@ -1,6 +1,9 @@
-import React, { useState, Fragment, useEffect } from 'react'
+import React, { useState, Fragment, useEffect, useContext } from 'react'
+import Context from './Context'
 
 const SectionSkills = () => {
+  const { hideDisplayInfo } = useContext(Context)
+  useEffect(() => hideDisplayInfo(), [])
   const [skillGroupList, setSkillGroupList] = useState([])
   const [iconSkillList, setIconSkillList] = useState([])
   useEffect(() => {

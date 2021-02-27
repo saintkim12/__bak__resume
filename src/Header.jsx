@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
+import Context from './Context'
 
 const Nav = () => {
   const [menu] = useState([
@@ -27,12 +28,16 @@ const Header = () => {
   useEffect(() => {
     document.title = userName
   }, [userName])
+  const { displayInfo = false } = useContext(Context)
   return (
-    <Fragment>
+    <header id="header">
       <Nav />
-      <h1 className="logo">{ userName }</h1>
-      <h2 className="slogan">Web Developer</h2>
-    </Fragment>
+      { displayInfo && (
+        <Fragment>
+          <h1 className="logo">{ userName }</h1>
+          <h2 className="slogan">Web Developer</h2>
+        </Fragment>) }
+    </header>
   )
 }
 export default Header
