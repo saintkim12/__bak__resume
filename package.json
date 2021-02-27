@@ -1,0 +1,28 @@
+{
+  "name": "themezy.john_markowitz",
+  "version": "1.0.0",
+  "description": "from https://www.themezy.com/free-website-templates/16-free-responsive-portfolio-template",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@parcel/transformer-css": "^2.0.0-nightly.612",
+    "@parcel/transformer-html": "^2.0.0-nightly.612",
+    "@parcel/transformer-postcss": "^2.0.0-nightly.612",
+    "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
+    "parcel": "^2.0.0-nightly.610",
+    "postcss": "^8.2.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saintkim12/themezy.john_markowitz.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saintkim12/themezy.john_markowitz/issues"
+  },
+  "homepage": "https://github.com/saintkim12/themezy.john_markowitz#readme"
+}
