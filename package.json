@@ -2,18 +2,35 @@
   "name": "themezy.john_markowitz",
   "version": "1.0.0",
   "description": "from https://www.themezy.com/free-website-templates/16-free-responsive-portfolio-template",
-  "main": "index.js",
-  "dependencies": {},
+  "main": "public/index.html",
+  "scripts": {
+    "server": "http-server public",
+    "dev": "parcel watch --target parcel --dist-dir ./public/parcel ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "targets": {
+    "parcel": {
+      "distDir": "./public/parcel"
+    }
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "devDependencies": {
     "@parcel/transformer-css": "^2.0.0-nightly.612",
     "@parcel/transformer-html": "^2.0.0-nightly.612",
     "@parcel/transformer-postcss": "^2.0.0-nightly.612",
     "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
+    "eslint": "^7.20.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "http-server": "^0.12.3",
     "parcel": "^2.0.0-nightly.610",
     "postcss": "^8.2.6"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
