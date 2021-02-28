@@ -1,50 +1,12 @@
-import React, { useState, Fragment, useEffect, useContext } from 'react'
+import React, { Fragment, useEffect, useContext } from 'react'
 import Context from './Context'
 
 const SectionSkills = () => {
-  const { hideDisplayInfo } = useContext(Context)
+  const {
+    ui: { hideDisplayInfo },
+    data: { mySkill: { skillGroup: skillGroupList = [], mainSkill: iconSkillList = [], description = [] } }
+  } = useContext(Context)
   useEffect(() => hideDisplayInfo(), [])
-  const [skillGroupList, setSkillGroupList] = useState([])
-  const [iconSkillList, setIconSkillList] = useState([])
-  useEffect(() => {
-    Promise.resolve({
-      data: {
-        skillGroup: [{
-          name: 'Graphic',
-          description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
-          skills: [
-            { name: 'Photoshop', level: 70 },
-            { name: 'Illustrator', level: 60 },
-            { name: 'InDesign', level: 80 },
-            { name: 'Flash', level: 20 }
-          ]
-        },
-        {
-          name: 'Development',
-          description: 'Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis. Perspiciatis unde omnis iste natus error sit voluptatem accusantium.',
-          skills: [
-            { name: 'html', level: 70 },
-            { name: 'Wordpress', level: 70 },
-            { name: 'jQuery', level: 70 },
-            { name: 'SEO', level: 70 }
-          ]
-        }],
-        iconSkill: [
-          { name: 'ps', iconSrc: '_template/images/icon_ps.png' },
-          { name: 'ai', iconSrc: '_template/images/icon_ai.png' },
-          { name: 'ld', iconSrc: '_template/images/icon_ld.png' },
-          { name: 'fl', iconSrc: '_template/images/icon_fl.png' },
-          { name: 'html', iconSrc: '_template/images/icon_html.png' },
-          { name: 'wp', iconSrc: '_template/images/icon_wp.png' },
-          { name: 'jq', iconSrc: '_template/images/icon_jq.png' },
-          { name: 'seo', iconSrc: '_template/images/icon_seo.png' }
-        ]
-      }
-    }).then(({ data: { skillGroup = [], iconSkill = [] } }) => {
-      setSkillGroupList(skillGroup)
-      setIconSkillList(iconSkill)
-    })
-  }, [])
   return (
     <Fragment>
       <div className="skills_holder">
@@ -62,30 +24,9 @@ const SectionSkills = () => {
         <li key={ name }><a href="#" style={ { background: `url(${iconSrc}) no-repeat 50% 50%` }}>{ name }</a></li>
         )) }
       </ul>
-      {/* <ul className="plagin_list"> */}
-        {/* <li className="li_1"><a href="#">ps</a></li> */}
-        {/* <li className="li_2"><a href="#">ai</a></li> */}
-        {/* <li className="li_3"><a href="#">ld</a></li> */}
-        {/* <li className="li_4"><a href="#">fl</a></li> */}
-        {/* <li className="li_5"><a href="#">html</a></li> */}
-        {/* <li className="li_6"><a href="#">wp</a></li> */}
-        {/* <li className="li_7"><a href="#">jq</a></li> */}
-        {/* <li className="li_8"><a href="#">seo</a></li> */}
-      {/* </ul> */}
-      {/* <ul className="plagin_list none"> */}
-        {/* <li className="li_1"><a href="#">ps</a></li> */}
-        {/* <li className="li_2"><a href="#">ai</a></li> */}
-        {/* <li className="li_3"><a href="#">ld</a></li> */}
-        {/* <li className="li_4"><a href="#">fl</a></li> */}
-      {/* </ul> */}
-      {/* <ul className="plagin_list none"> */}
-        {/* <li className="li_5"><a href="#">html</a></li> */}
-        {/* <li className="li_6"><a href="#">wp</a></li> */}
-        {/* <li className="li_7"><a href="#">jq</a></li> */}
-        {/* <li className="li_8"><a href="#">seo</a></li> */}
-      {/* </ul> */}
-      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.</p>
-      <p>Qui officia deserunt mollitia animi, id est laborum et dolorum fuga. <span>Et harum quidem rerum facilis est et expedita distinctio</span> . Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+      { description.map((s, i) => (
+        <p key={ i }>{ s }</p>
+      )) }
     </Fragment>
   )
 }

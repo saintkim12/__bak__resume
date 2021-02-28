@@ -20,10 +20,13 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@parcel/optimizer-cssnano": "^2.0.0-nightly.612",
+    "@parcel/packager-css": "^2.0.0-nightly.612",
     "@parcel/transformer-css": "^2.0.0-nightly.612",
     "@parcel/transformer-html": "^2.0.0-nightly.612",
     "@parcel/transformer-postcss": "^2.0.0-nightly.612",
     "@parcel/transformer-posthtml": "^2.0.0-nightly.612",
+    "@parcel/transformer-sass": "^2.0.0-nightly.612",
     "eslint": "^7.20.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",

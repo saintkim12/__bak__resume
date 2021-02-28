@@ -3,7 +3,7 @@ import Timeline from './Timeline'
 import Context from './Context'
 
 const SectionAchievements = () => {
-  const { showDisplayInfo } = useContext(Context)
+  const { ui: { showDisplayInfo } } = useContext(Context)
   useEffect(() => showDisplayInfo(), [])
   return (
     <Fragment>

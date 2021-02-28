@@ -1,21 +1,19 @@
-import React, { useState, Fragment, useContext, useEffect } from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import Context from './Context'
 
 const SectionContact = () => {
-  const { hideDisplayInfo } = useContext(Context)
+  const { ui: { hideDisplayInfo }, data: { user } } = useContext(Context)
+  const { imgSrc = 'https://avatars.githubusercontent.com/u/45479131?s=460&v=4', name = '', email = '', phone = '', skype = '' } = Object(user)
   useEffect(() => hideDisplayInfo(), [])
-  const [info] = useState({
-    email: 'john_markowitz@gmail.com',
-    phone: '+45 532 823 385',
-    skype: 'J_mwitz'
-  })
   return (
     <Fragment>
-      <div className="images_holder"><img src="_template/images/pic_08.png" alt={info.email} /></div>
+      <div className="images_holder">
+        <img src={ imgSrc } style={ { borderRadius: '30%' }} alt={ name } />
+      </div>
       <div className="box_contact">
-        <span className="email">{ info.email }</span>
-        <span className="phone">{ info.phone }</span>
-        <span className="skype">{ info.skype }</span>
+        <span className="email">{ email }</span>
+        <span className="phone">{ phone }</span>
+        <span className="skype">{ skype }</span>
       </div>
       <div className="clear"></div>
     </Fragment>

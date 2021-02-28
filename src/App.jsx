@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { HashRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
 import Context from './Context'
 import Section from './Section'
@@ -34,8 +34,21 @@ const Nav = () => {
 
 const App = () => {
   const [displayInfo, setDisplayInfo] = useState(false)
+  const [pageData, setPageData] = useState({ user: {}, achievements: {}, mySkill: {} })
+  useEffect(function fetchData() {
+    import('./data.js').then(({ default: data }) => ({ data }))
+      .then(({ data }) => setPageData(data))
+  }, [])
+  const value = {
+    ui: {
+      displayInfo,
+      showDisplayInfo: () => setDisplayInfo(true),
+      hideDisplayInfo: () => setDisplayInfo(false)
+    },
+    data: pageData
+  }
   return (
-    <Context.Provider value={ { displayInfo, showDisplayInfo: () => setDisplayInfo(true), hideDisplayInfo: () => setDisplayInfo(false) } }>
+    <Context.Provider value={ value }>
       <div id="wrapper" className="inner">
         <Router>
           <div className="wrapper-holder">

@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import Context from './Context'
+
 const Timeline = () => {
-  const [timeline, setTimeline] = useState([])
-  useEffect(() => {
-    // init fetch data
-    Promise.resolve({
-      data: [
-        { key: 1, date: '211209', title: 'tempora incidunt', description: 'Dolor sit consectetur adipisicing elit, sed do eiusmod tempor' },
-        { key: 2, date: '211209', title: 'tempora incidunt', description: 'Dolor sit consectetur adipisicing elit, sed do eiusmod tempor' }
-      ]
-    }).then(({ data }) => setTimeline(data))
-  }, [])
+  const {
+    data: { achievements: { timeline = [] } }
+  } = useContext(Context)
   return (
     <div className="box_timeline_holder">
       <div className="box_timeline">

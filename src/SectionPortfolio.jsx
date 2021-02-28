@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import Context from './Context'
 import $ from 'jquery'
 const SectionPortfolio = () => {
-  const { hideDisplayInfo } = useContext(Context)
+  const { ui: { hideDisplayInfo } } = useContext(Context)
   useEffect(() => hideDisplayInfo(), [])
   useEffect(() => {
     $(() => {
