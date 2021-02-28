@@ -13,13 +13,14 @@ const Nav = () => {
   const [menu] = useState([
     { name: 'index', title: 'Home', to: '/' },
     { name: 'myskills', title: 'My skills', to: '/myskills' },
-    { name: 'Portfolio', title: 'Portfolio', to: '/portfolio' },
-    { name: 'Contact', title: 'Contact', to: '/contact' }
+    { name: 'portfolio', title: 'Portfolio', to: '/portfolio' },
+    { name: 'contact', title: 'Contact', to: '/contact' }
   ])
   // const [activeMenuName] = useState('index')
   return (
     <Fragment>
-      {/* <a className="menu_trigger" href="#">menu</a> */}
+      {/* mobile menu button */}
+      <a className="menu_trigger" href="#">menu</a>
       <nav id="nav">
         <ul>{ menu.map(({ name, title, to }) => (
           <li key={ name }>
@@ -35,24 +36,26 @@ const App = () => {
   const [displayInfo, setDisplayInfo] = useState(false)
   return (
     <Context.Provider value={ { displayInfo, showDisplayInfo: () => setDisplayInfo(true), hideDisplayInfo: () => setDisplayInfo(false) } }>
-      <Router>
-        <div className="wrapper-holder">
-          <Header>
-            { Nav() }
-          </Header>
-        </div>
-        <div className="wrapper-holder grey">
-          <Section>
-            <Switch>
-              <Route exact path="/" component={ SectionAchievements } />
-              <Route path="/myskills" component={ SectionSkills } />
-              <Route path="/portfolio" component={ SectionPortfolio } />
-              <Route path="/contact" component={ SectionContact } />
-            </Switch>
-          </Section>
-        </div>
-      </Router>
-      <Footer />
+      <div id="wrapper" className="inner">
+        <Router>
+          <div className="wrapper-holder">
+            <Header>
+              { Nav() }
+            </Header>
+          </div>
+          <div className="wrapper-holder grey">
+            <Section>
+              <Switch>
+                <Route exact path="/" component={ SectionAchievements } />
+                <Route path="/myskills" component={ SectionSkills } />
+                <Route path="/portfolio" component={ SectionPortfolio } />
+                <Route path="/contact" component={ SectionContact } />
+              </Switch>
+            </Section>
+          </div>
+        </Router>
+        <Footer />
+      </div>
     </Context.Provider>
   )
 }

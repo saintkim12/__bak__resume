@@ -11,7 +11,7 @@ const SectionContact = () => {
   })
   return (
     <Fragment>
-      <div className="images_holder"><img src="images/pic_08.png" alt={info.email} /></div>
+      <div className="images_holder"><img src="_template/images/pic_08.png" alt={info.email} /></div>
       <div className="box_contact">
         <span className="email">{ info.email }</span>
         <span className="phone">{ info.phone }</span>

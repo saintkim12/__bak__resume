@@ -30,14 +30,14 @@ const SectionSkills = () => {
           ]
         }],
         iconSkill: [
-          { name: 'ps', iconSrc: 'images/icon_ps.png' },
-          { name: 'ai', iconSrc: 'images/icon_ai.png' },
-          { name: 'ld', iconSrc: 'images/icon_ld.png' },
-          { name: 'fl', iconSrc: 'images/icon_fl.png' },
-          { name: 'html', iconSrc: 'images/icon_html.png' },
-          { name: 'wp', iconSrc: 'images/icon_wp.png' },
-          { name: 'jq', iconSrc: 'images/icon_jq.png' },
-          { name: 'seo', iconSrc: 'images/icon_seo.png' }
+          { name: 'ps', iconSrc: '_template/images/icon_ps.png' },
+          { name: 'ai', iconSrc: '_template/images/icon_ai.png' },
+          { name: 'ld', iconSrc: '_template/images/icon_ld.png' },
+          { name: 'fl', iconSrc: '_template/images/icon_fl.png' },
+          { name: 'html', iconSrc: '_template/images/icon_html.png' },
+          { name: 'wp', iconSrc: '_template/images/icon_wp.png' },
+          { name: 'jq', iconSrc: '_template/images/icon_jq.png' },
+          { name: 'seo', iconSrc: '_template/images/icon_seo.png' }
         ]
       }
     }).then(({ data: { skillGroup = [], iconSkill = [] } }) => {
