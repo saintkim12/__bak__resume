@@ -34,7 +34,7 @@ const Nav = () => {
 
 const App = () => {
   const [displayInfo, setDisplayInfo] = useState(false)
-  const [pageData, setPageData] = useState({ user: {}, achievements: {}, mySkill: {} })
+  const [pageData, setPageData] = useState({ user: {}, achievements: {}, mySkill: {}, portfolio: {} })
   useEffect(function fetchData() {
     import('./data.js').then(({ default: data }) => ({ data }))
       .then(({ data }) => setPageData(data))

@@ -2,18 +2,22 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import Context from './Context'
 import $ from 'jquery'
 const SectionPortfolio = () => {
-  const { ui: { hideDisplayInfo } } = useContext(Context)
+  const { ui: { hideDisplayInfo }, data: { portfolio: { list = [] } } } = useContext(Context)
+  const keywordFilters = list.flatMap(({ keyword = [] }) => keyword).filter((s, i, a) => a.indexOf(s) === i).sort()
   useEffect(() => hideDisplayInfo(), [])
   useEffect(() => {
+    if (!list.length) return
     $(() => {
-      $('.item-list li').mouseenter(function () {
-        $(this).find($('.item-list .hover')).stop(true, true).fadeIn(600)
-        return false
-      })
-      $('.item-list li').mouseleave(function () {
-        $(this).find($('.item-list .hover')).stop(true, true).fadeOut(400)
-        return false
-      })
+      $('.item-list')
+        .off('mouseenter', 'li')
+        .off('mouseleave', 'li')
+        .on('mouseenter', 'li', function () {
+          $(this).find($('.item-list .hover')).stop(true, true).fadeIn(600)
+          return false
+        }).on('mouseleave', 'li', function () {
+          $(this).find($('.item-list .hover')).stop(true, true).fadeOut(400)
+          return false
+        })
     })
     const { jQuery } = window // get template jQuery(already injected)
     jQuery(() => {
@@ -57,37 +61,15 @@ const SectionPortfolio = () => {
         }
       })
     })
-  }, [])
-  const list = [
-    { id: 1, keyword: ['web', 'key'], imgSrc: '_template/images/pic_01.png', title: '', description: '', detail: { imgSrc: '', contents: '' } },
-    { id: 2, keyword: ['illustration', 'identity'], imgSrc: '_template/images/pic_1_1.png', title: '', description: '', detail: { imgSrc: '', contents: '' } },
-    { id: 3, keyword: ['web', 'dtp'], imgSrc: '_template/images/pic_02.png', title: '', description: '', detail: { imgSrc: '', contents: '' } },
-    { id: 4, keyword: ['illustration', 'key'], imgSrc: '_template/images/pic_03.png', title: '', description: '', detail: { imgSrc: '', contents: '' } },
-    { id: 5, keyword: ['web', 'identity'], imgSrc: '_template/images/pic_04.png', title: '', description: '', detail: { imgSrc: '', contents: '' } },
-    { id: 6, keyword: ['dtp', 'identity'], imgSrc: '_template/images/pic_05.png', title: '', description: '', detail: { imgSrc: '', contents: '' } },
-    { id: 7, keyword: ['dtp', 'key'], imgSrc: '_template/images/pic_06.png', title: '', description: '', detail: { imgSrc: '', contents: '' } },
-    { id: 8, keyword: ['web', 'identity'], imgSrc: '_template/images/pic_07.png', title: '', description: '', detail: { imgSrc: '', contents: '' } }
-  ].map(({ detail: { ...detail }, ...o }) => ({
-    ...o,
-    title: 'voluptas assumenda',
-    description: 'Sepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae',
-    detail: {
-      ...detail,
-      imgSrc: '_template/images/img_pf02.jpg',
-      date: '2020-01-01',
-      contents: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.'
-    }
-  }))
+  }, [list])
   return (
     <Fragment>
       <h2>All works that I made</h2>
       <ul id="filters" className="sub_nav">
         <li className="active" data-filter="*">All works</li>
-        <li data-filter=".web">Web design</li>
-        <li data-filter=".illustration">Illustration</li>
-        <li data-filter=".dtp">DTP</li>
-        <li data-filter=".key">Key Visual</li>
-        <li data-filter=".identity">Identity</li>
+        { keywordFilters.map(keyword => (
+          <li key={ keyword } data-filter={ `.${keyword}` }>{ keyword }</li>
+        )) }
       </ul>
       <ul id="container" className="item-list">
         { list.map(({ id, keyword, imgSrc, title, description }) => (
@@ -109,12 +91,17 @@ const SectionPortfolio = () => {
       </ul>
       {/* Fancybox 팝업존 */}
       <div style={ { display: 'none' } }>
-        { list.map(({ id, title, detail: { date, imgSrc, contents } }) => (
+        { list.map(({ id, title, detail: { startDate = '', endDate = '', img = [], contents } }) => (
         <div key={ id } id={ `popup-portfolio-${id}` } className="popup_portfolio">
-          <img src={ imgSrc } alt={ title } />
+          {/* TODO: 슬라이드처리? */}
+          { img[0] && (
+          <img src={ img[0] } alt={ title } />) }
           <h3>{ title }</h3>
-          <time dateTime={date}>Made: { date }</time>
-          <p>{ contents }</p>
+          <time dateTime={startDate}>Made: { `${startDate} ~ ${endDate}` }</time>
+          <div className="contents">
+            { contents.split('\n').map((s, i) => (
+            <p key={ i }>{ s }</p>)) }
+          </div>
         </div>
         )) }
       </div>
