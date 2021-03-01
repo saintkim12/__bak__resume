@@ -35,14 +35,14 @@ export default {
       ]
     }],
     mainSkill: [
-      { name: 'ps', iconSrc: '_template/images/icon_ps.png' },
-      { name: 'ai', iconSrc: '_template/images/icon_ai.png' },
-      { name: 'ld', iconSrc: '_template/images/icon_ld.png' },
-      { name: 'fl', iconSrc: '_template/images/icon_fl.png' },
-      { name: 'html', iconSrc: '_template/images/icon_html.png' },
-      { name: 'wp', iconSrc: '_template/images/icon_wp.png' },
-      { name: 'jq', iconSrc: '_template/images/icon_jq.png' },
-      { name: 'seo', iconSrc: '_template/images/icon_seo.png' }
+      { name: 'ps', iconSrc: 'template/images/icon_ps.png' },
+      { name: 'ai', iconSrc: 'template/images/icon_ai.png' },
+      { name: 'ld', iconSrc: 'template/images/icon_ld.png' },
+      { name: 'fl', iconSrc: 'template/images/icon_fl.png' },
+      { name: 'html', iconSrc: 'template/images/icon_html.png' },
+      { name: 'wp', iconSrc: 'template/images/icon_wp.png' },
+      { name: 'jq', iconSrc: 'template/images/icon_jq.png' },
+      { name: 'seo', iconSrc: 'template/images/icon_seo.png' }
     ],
     description: [
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.',
@@ -75,12 +75,12 @@ export default {
         description: '농협몰 BackOffice에서 상담사가 사용하는 상담화면 개발',
         detail: { img: [], startDate: '2017-04', endDate: '2018-01', contents: '상담 어플리케이션 웹 화면(nexacro) 개발\n소프트폰 연결\n통계 페이지 개발' }
       }
-      // { id: 3, keyword: ['web', 'dtp'], imgSrc: '_template/images/pic_02.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
-      // { id: 4, keyword: ['illustration', 'key'], imgSrc: '_template/images/pic_03.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
-      // { id: 5, keyword: ['web', 'identity'], imgSrc: '_template/images/pic_04.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
-      // { id: 6, keyword: ['dtp', 'identity'], imgSrc: '_template/images/pic_05.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
-      // { id: 7, keyword: ['dtp', 'key'], imgSrc: '_template/images/pic_06.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
-      // { id: 8, keyword: ['web', 'identity'], imgSrc: '_template/images/pic_07.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } }
+      // { id: 3, keyword: ['web', 'dtp'], imgSrc: 'template/images/pic_02.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
+      // { id: 4, keyword: ['illustration', 'key'], imgSrc: 'template/images/pic_03.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
+      // { id: 5, keyword: ['web', 'identity'], imgSrc: 'template/images/pic_04.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
+      // { id: 6, keyword: ['dtp', 'identity'], imgSrc: 'template/images/pic_05.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
+      // { id: 7, keyword: ['dtp', 'key'], imgSrc: 'template/images/pic_06.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } },
+      // { id: 8, keyword: ['web', 'identity'], imgSrc: 'template/images/pic_07.png', title: '', description: '', detail: { imgSrc: '', date: '2020-01-01', contents: '' } }
     ]
   }
 }
