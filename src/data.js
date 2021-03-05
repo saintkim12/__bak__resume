@@ -35,14 +35,20 @@ export default {
       ]
     }],
     mainSkill: [
-      { name: 'ps', iconSrc: 'template/images/icon_ps.png' },
-      { name: 'ai', iconSrc: 'template/images/icon_ai.png' },
-      { name: 'ld', iconSrc: 'template/images/icon_ld.png' },
-      { name: 'fl', iconSrc: 'template/images/icon_fl.png' },
-      { name: 'html', iconSrc: 'template/images/icon_html.png' },
-      { name: 'wp', iconSrc: 'template/images/icon_wp.png' },
-      { name: 'jq', iconSrc: 'template/images/icon_jq.png' },
-      { name: 'seo', iconSrc: 'template/images/icon_seo.png' }
+      { name: 'spring', iconSrc: 'https://spring.io/images/projects/spring-edf462fec682b9d48cf628eaf9e19521.svg' },
+      { name: 'java', iconClassName: 'fab fa-java', style: { fontSize: '5em' } },
+      { name: 'js', iconClassName: 'fab fa-js-square' },
+      { name: 'git', iconClassName: 'fab fa-git-alt' },
+      { name: 'vue', iconClassName: 'fab fa-vuejs', style: { fontSize: '5em' } },
+      { name: 'sass', iconClassName: 'fab fa-sass', style: { fontSize: '4em' } },
+      { name: 'docker', iconClassName: 'fab fa-docker', style: { fontSize: '4em' } },
+      // { name: 'ai', iconClassName: iconSrc: 'template/images/icon_ai.png' },
+      // { name: 'ld', iconSrc: 'template/images/icon_ld.png' },
+      // { name: 'fl', iconSrc: 'template/images/icon_fl.png' },
+      // { name: 'html', iconSrc: 'template/images/icon_html.png' },
+      // { name: 'wp', iconSrc: 'template/images/icon_wp.png' },
+      { name: 'jq', iconSrc: 'template/images/icon_jq.png' }
+      // { name: 'seo', iconSrc: 'template/images/icon_seo.png' }
     ],
     description: [
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.',

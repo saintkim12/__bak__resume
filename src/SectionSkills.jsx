@@ -20,8 +20,12 @@ const SectionSkills = () => {
         </div>)) }
       </div>
       <ul className="plagin_list">
-        { iconSkillList.map(({ name, iconSrc }) => (
-        <li key={ name }><a href="#" style={ { background: `url(${iconSrc}) no-repeat 50% 50%` }}>{ name }</a></li>
+        { iconSkillList.map(({ name, iconSrc = '', iconClassName = '', style }) => (
+        <li key={ name }>{
+          iconSrc
+            ? <a href="#" title={ name } style={ { background: `url(${iconSrc}) no-repeat 50% 50%` } }>{ name }</a>
+            : iconClassName ? <a href="#" title={ name } style={ { textIndent: 'initial', textDecoration: 'none', fontSize: '6em', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', borderRadius: '50%', ...style } }><i className={ iconClassName }></i></a> : ('')
+        } </li>
         )) }
       </ul>
       { description.map((s, i) => (
