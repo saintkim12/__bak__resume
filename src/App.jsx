@@ -34,6 +34,7 @@ const Nav = () => {
 
 const App = () => {
   const [displayInfo, setDisplayInfo] = useState(false)
+  const [sectionInfo, setSectionInfo] = useState(null)
   const [pageData, setPageData] = useState({ user: {}, achievements: {}, mySkill: {}, portfolio: {} })
   useEffect(function fetchData() {
     import('./data.js').then(({ default: data }) => ({ data }))
@@ -43,7 +44,9 @@ const App = () => {
     ui: {
       displayInfo,
       showDisplayInfo: () => setDisplayInfo(true),
-      hideDisplayInfo: () => setDisplayInfo(false)
+      hideDisplayInfo: () => setDisplayInfo(false),
+      sectionInfo,
+      setSectionInfo: o => setSectionInfo({ ...o })
     },
     data: pageData
   }

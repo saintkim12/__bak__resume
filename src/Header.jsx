@@ -7,7 +7,7 @@ const Header = ({ children }) => {
   useEffect(() => {
     document.title = userName
   }, [userName])
-  const { displayInfo = false } = useContext(Context)
+  const { ui: { displayInfo = false } } = useContext(Context)
   useEffect(() => {
     $(document).off('click', '.menu_trigger')
       .on('click', '.menu_trigger', function (e) {

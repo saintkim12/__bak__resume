@@ -3,10 +3,17 @@ import Context from './Context'
 
 const SectionSkills = () => {
   const {
-    ui: { hideDisplayInfo },
+    ui: { hideDisplayInfo, setSectionInfo },
     data: { mySkill: { skillGroup: skillGroupList = [], mainSkill: iconSkillList = [], description = [] } }
   } = useContext(Context)
-  useEffect(() => hideDisplayInfo(), [])
+  useEffect(() => {
+    hideDisplayInfo()
+    setSectionInfo({
+      name: 'SectionSkills.jsx',
+      fullPath: 'src/SectionSkills.jsx',
+      getViewSourceUrl: ({ baseUrl, fullPath }) => [baseUrl, fullPath].join('/')
+    })
+  }, [])
   return (
     <Fragment>
       <div className="skills_holder">

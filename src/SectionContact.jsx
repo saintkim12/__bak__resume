@@ -2,9 +2,16 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import Context from './Context'
 
 const SectionContact = () => {
-  const { ui: { hideDisplayInfo }, data: { user } } = useContext(Context)
+  const { ui: { hideDisplayInfo, setSectionInfo }, data: { user } } = useContext(Context)
   const { imgSrc = 'https://avatars.githubusercontent.com/u/45479131?s=460&v=4', name = '', email = '', phone = '', skype = '' } = Object(user)
-  useEffect(() => hideDisplayInfo(), [])
+  useEffect(() => {
+    hideDisplayInfo()
+    setSectionInfo({
+      name: 'SectionContact.jsx',
+      fullPath: 'src/SectionContact.jsx',
+      getViewSourceUrl: ({ baseUrl, fullPath }) => [baseUrl, fullPath].join('/')
+    })
+  }, [])
   return (
     <Fragment>
       <div className="images_holder">

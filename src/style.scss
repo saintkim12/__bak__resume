@@ -1,3 +1,14 @@
+#main {
+  & { padding-top: 0; background: none; }
+  .view-source {
+    width: 114px;
+    height: 46px;
+    margin: 0 auto 47px;
+    cursor: pointer;
+    background: url(../public/template/images/icon_header.png) no-repeat 50% 0;
+  }
+}
+
 .footer-content .social {
   & { width: initial; display: flex; justify-content: center; }
   .icon-item {
@@ -7,6 +18,15 @@
       & { font-size: 1.2em; }
     }
   }
+}
+// timeline
+.box_timeline ul {
+  display: flex;
+  justify-content: center;
+}
+// portfolio
+.item .image img {
+  min-height: 270px;
 }
 .popup_portfolio .contents p {
   line-height: 24px;

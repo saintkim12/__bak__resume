@@ -8,7 +8,7 @@ const Timeline = () => {
   return (
     <div className="box_timeline_holder">
       <div className="box_timeline">
-        <ul>{timeline.map(({ key, date, title, description }) => (
+        <ul>{timeline.map(({ date, title, description, key = date }) => (
           <li key={ key }>
             <div className="date"><span>{ date }</span></div>
             <h3>{ title }</h3>

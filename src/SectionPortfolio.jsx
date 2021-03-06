@@ -2,9 +2,16 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import Context from './Context'
 import $ from 'jquery'
 const SectionPortfolio = () => {
-  const { ui: { hideDisplayInfo }, data: { portfolio: { list = [] } } } = useContext(Context)
+  const { ui: { hideDisplayInfo, setSectionInfo }, data: { portfolio: { list = [] } } } = useContext(Context)
   const keywordFilters = list.flatMap(({ keyword = [] }) => keyword).filter((s, i, a) => a.indexOf(s) === i).sort()
-  useEffect(() => hideDisplayInfo(), [])
+  useEffect(() => {
+    hideDisplayInfo()
+    setSectionInfo({
+      name: 'SectionPortfolio.jsx',
+      fullPath: 'src/SectionPortfolio.jsx',
+      getViewSourceUrl: ({ baseUrl, fullPath }) => [baseUrl, fullPath].join('/')
+    })
+  }, [])
   useEffect(() => {
     if (!list.length) return
     $(() => {
