@@ -61,6 +61,91 @@ export default {
   portfolio: {
     list: [
       {
+        id: 201001,
+        keyword: ['springboot', 'oracle', 'vuejs', 'jenkins', 'docker', 'nuxtjs', 'vuecli'],
+        imgSrc: './images/portfolio_201001.png',
+        title: '한국보건사회연구원 홈페이지 리뉴얼',
+        link: 'https://www.kihasa.re.kr',
+        description: '한국보건사회연구원 홈페이지 리뉴얼, 리뉴얼 화면에 맞춘 관리자 페이지 개편, 공통기능 개발',
+        detail: {
+          startDate: '2020-06',
+          endDate: '-',
+          contents: '사내 프레임워크 적용 및 구성 설정\n프로토타입 소스 작성 및 작업방법 설명\nNuxt.js를 사용한 사용자 화면 구성/검색 최적화\nDocker 기반(Linux)의 운영 환경 세팅/설정\n외부 라이브러리(본인인증(DreamSecurity), 결제모듈(Xpay), 에디터(SynapEditor), 문서뷰어(SynapDocumentViewer), 지도 API(Kakao Map) 등) 연동',
+          img: [
+            './images/portfolio_201001_01.png',
+            './images/portfolio_201001_02.png',
+            './images/portfolio_201001_03.png'
+          ]
+        }
+      },
+      {
+        id: 200601,
+        keyword: ['springboot', 'mssql', 'vuejs', 'jenkins', 'docker', 'vuecli'],
+        imgSrc: './images/portfolio_200601.png',
+        title: '글로애져 ERP 개발',
+        description: '(주)글로애져 맞춤형 ERP 기능 개발, MES 데이터 연동에 따른 작업',
+        detail: {
+          startDate: '2020-06',
+          endDate: '2020-12',
+          contents: '사내 프레임워크 적용 및 구성 설정\n프로토타입 소스 작성 및 작업방법 설명\nDocker 기반(Windows + Docker Toolbox)의 운영 환경 세팅/설정',
+          img: [
+            './images/portfolio_200601_01.png'
+          ]
+        }
+      },
+      {
+        id: 191002,
+        keyword: ['springboot', 'thymeleaf', 'oracle', 'jquery', 'vuejs', 'vuecli', 'jenkins', 'docker'],
+        imgSrc: './images/portfolio_191002.png',
+        title: '보건복지데이터포털 ActiveX 제거 사업',
+        link: 'https://data.kihasa.re.kr',
+        description: '보건복지데이터포털 사이트 리뉴얼 및 ActiveX 기능(MiPlatform 등)을 HTML5 기반으로 변경, 리뉴얼 화면에 맞춘 관리자 페이지 개편',
+        detail: {
+          startDate: '2019-10',
+          endDate: '2020-05',
+          contents: '사내 프레임워크 적용 및 구성 설정\n프로토타입 소스 작성 및 작업방법 설명\n통계 페이지 개발/차트 기능 적용\nJenkins + Docker(Linux) 기반의 운영 환경 세팅/설정',
+          img: [
+            './images/portfolio_191002_01.png',
+            './images/portfolio_191002_02.png',
+            './images/portfolio_191002_03.png',
+            './images/portfolio_191002_04.png',
+            './images/portfolio_191002_05.png'
+          ]
+        }
+      },
+      {
+        id: 191001,
+        keyword: ['spring', 'jsp', 'oracle', 'jquery', 'vuejs'],
+        imgSrc: './images/portfolio_191001.png',
+        title: '한국스포츠정책과학원 국민체력 100 통계 개선 과업 개발',
+        description: '기 개발된 국민체력 100 홈페이지에 사용자/관리자 통계 기능 추가 개발',
+        detail: {
+          startDate: '2019-10',
+          endDate: '2019-12',
+          contents: '기존 데이터 분석 및 요구 사항에 맞춘 추가 통계 출력 기능/화면 작업\n통계를 위한 테이블 추가/최적화 작업\n차트 라이브러리 도입 및 Data 연동 작업',
+          img: ['./images/portfolio_191001_01.png', './images/portfolio_191001_02.png']
+        }
+      },
+      {
+        id: 190102,
+        keyword: ['git', 'springboot', 'vuejs', 'vuecli', 'oracle', 'vscode', 'jenkins', 'docker', 'nodejs', 'nuxtjs'],
+        imgSrc: './images/portfolio_190102.png',
+        title: '사내 개발 프레임워크 구축',
+        description: '사내 Java 기반 프로젝트 개발을 위한 개발 환경 및 프레임워크 구축, 전체적인 프로젝트 구성 설계, 프로젝트 진행에 따라 구성 및 기능 갱신',
+        detail: {
+          img: [
+            './images/portfolio_190102_01.png',
+            './images/portfolio_190102_02.png',
+            './images/portfolio_190102_03.png',
+            './images/portfolio_190102_04.png',
+            './images/portfolio_190102_05.png'
+          ],
+          startDate: '2019-01',
+          endDate: '2019-09',
+          contents: '기존 이클립스 기반 프레임워크 분석\nVSCode를 IDE로 사용하는 Spring Boot(Java 8, Gradle) + Vue CLI(Node.js 12, Vue CLI 3)를 사용하는 신규 프레임워크 설계, 구축\n개발 서버에 Docker Container화하여 Jenkins를 통한 자동 배포 기능 작업(운영 서버에도 적용)\n신규 프로젝트에 프레임워크 적용 및 운영\n버전관리시스템(git[bitbucket])에 보일러 플레이트 프로젝트를 작성하여 신규 프로젝트에 유연하게 적용하도록 구성\nJava, Javascript 각 공통 부분을 라이브러리로 분리\n사내 협업 툴(Dooray)에 프로젝트 설명 문서 작성 및 공유'
+        }
+      },
+      {
         id: 190101,
         keyword: ['springboot', 'vuejs', 'oracle'],
         imgSrc: './images/portfolio_190101.png',
@@ -70,7 +155,7 @@ export default {
       },
       {
         id: 180301,
-        keyword: ['freelancer', 'springboot', 'jsp', 'oracle'],
+        keyword: ['springboot', 'jsp', 'oracle'],
         imgSrc: './images/portfolio_180301.png',
         title: 'BGF네트웍스 모바일 상품권 시스템 고도화',
         description: 'BGF네트웍스 모바일 상품권 관리 시스템 개발',

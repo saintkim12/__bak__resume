@@ -28,6 +28,9 @@
 .item .image img {
   min-height: 270px;
 }
+.sub_nav li {
+  margin-bottom: 10px;
+}
 .popup_portfolio .contents p {
   line-height: 24px;
   &:not(:first-child) { padding-top: 0; }

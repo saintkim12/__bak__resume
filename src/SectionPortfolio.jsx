@@ -98,12 +98,12 @@ const SectionPortfolio = () => {
       </ul>
       {/* Fancybox 팝업존 */}
       <div style={ { display: 'none' } }>
-        { list.map(({ id, title, detail: { startDate = '', endDate = '', img = [], contents } }) => (
+        { list.map(({ id, title, link = '', linkTitle = '', detail: { startDate = '', endDate = '', img = [], contents } }) => (
         <div key={ id } id={ `popup-portfolio-${id}` } className="popup_portfolio">
           {/* TODO: 슬라이드처리? */}
           { img[0] && (
           <img src={ img[0] } alt={ title } />) }
-          <h3>{ title }</h3>
+          <h3>{ title } { link && <a href={ link } rel="noreferrer" target="_blank" style={ { marginLeft: '5px', fontSize: '.8em' } }>{ linkTitle || link }</a> } </h3>
           <time dateTime={startDate}>Made: { `${startDate} ~ ${endDate}` }</time>
           <div className="contents">
             { contents.split('\n').map((s, i) => (
